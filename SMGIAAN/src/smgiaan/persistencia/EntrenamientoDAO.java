@@ -1,0 +1,54 @@
+package smgiaan.persistencia;
+
+import smgiaan.modelo.Entrenamiento;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+
+public class EntrenamientoDAO {
+
+    // Insertar un entrenamiento en la BD
+    public void insertar(Entrenamiento e) throws SQLException {
+        String sql = "INSERT INTO entrenamientos (atleta_id, fecha, tipoEntrenamiento, valorRendimiento, ubicacion,pais) " +
+                     "VALUES (?, ?, ?, ?, ?, ?)";
+        try (Connection con = ConexionBD.getConnection();
+             PreparedStatement ps = con.prepareStatement(sql)) {
+
+            ps.setInt(1, e.getAtletaId());
+            ps.setDate(2, java.sql.Date.valueOf(e.getFecha()));
+            ps.setString(3, e.getTipoEntrenamiento());
+            ps.setDouble(4, e.getValorRendimiento());
+            ps.setString(5, e.getUbicacion());
+            ps.setString(6, e.getPais());
+            
+
+            ps.executeUpdate();
+        }
+    }
+
+    // Listar entrenamientos por atleta
+    public List<Entrenamiento> listarPorAtleta(int atletaId) throws SQLException {
+        List<Entrenamiento> lista = new ArrayList<>();
+        String sql = "SELECT * FROM entrenamientos WHERE atleta_id = ? ORDER BY fecha";
+        try (Connection con = ConexionBD.getConnection();
+             PreparedStatement ps = con.prepareStatement(sql)) {
+
+            ps.setInt(1, atletaId);
+            try (ResultSet rs = ps.executeQuery()) {
+                while (rs.next()) {
+                    Entrenamiento e = new Entrenamiento();
+                    e.setId(rs.getInt("id"));
+                    e.setAtletaId(rs.getInt("atleta_id"));
+                    e.setFecha(rs.getDate("fecha").toLocalDate());
+                    e.setTipoEntrenamiento(rs.getString("tipoEntrenamiento"));
+                    e.setValorRendimiento(rs.getDouble("valorRendimiento"));
+                    e.setUbicacion(rs.getString("ubicacion"));
+                    e.setUbicacion(rs.getString("pais"));
+                    
+                    lista.add(e);
+                }
+            }
+        }
+        return lista;
+    }
+}

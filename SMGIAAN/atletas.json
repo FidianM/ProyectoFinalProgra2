@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "nombre": "Fidian",
+    "edad": 30,
+    "disciplina": "Salto",
+    "departamento": "Guatemala",
+    "nacionalidad": "Venezolano",
+    "fechaIngreso": "2025-09-25",
+    "entrenamientos": []
+  },
+  {
+    "id": 2,
+    "nombre": "Fidian Morales",
+    "edad": 20,
+    "disciplina": "test",
+    "departamento": "San Marcos",
+    "nacionalidad": "Venezolano",
+    "fechaIngreso": "2025-09-26",
+    "entrenamientos": []
+  },
+  {
+    "id": 3,
+    "nombre": "Fidian M",
+    "edad": 40,
+    "disciplina": "Salto",
+    "departamento": "Petén",
+    "nacionalidad": "Venezolano",
+    "fechaIngreso": "2025-09-26",
+    "entrenamientos": []
+  },
+  {
+    "id": 4,
+    "nombre": "Fidian Prueba",
+    "edad": 25,
+    "disciplina": "Natación",
+    "departamento": "Jutiapa",
+    "nacionalidad": "Venezolano",
+    "fechaIngreso": "2025-09-26",
+    "entrenamientos": []
+  },
+  {
+    "id": 5,
+    "nombre": "test",
+    "edad": 15,
+    "disciplina": "Natacion",
+    "departamento": "El Progreso",
+    "nacionalidad": "Colombiano",
+    "fechaIngreso": "2025-09-26",
+    "entrenamientos": []
+  },
+  {
+    "id": 6,
+    "nombre": "Luis Fernando",
+    "edad": 42,
+    "disciplina": "Natacion",
+    "departamento": "Escuintla",
+    "nacionalidad": "Guatemala",
+    "fechaIngreso": "2025-09-27",
+    "entrenamientos": []
+  }
+]
